@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Jihan</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content: center; 
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(114, 150, 240);
+        margin: 0;
+    }
+    .calculate {
+        background-color: rgb(81, 22, 190);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    input#result {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        text-align: right;
+        text-align: right;
+        font-size: 1.5rem;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        padding-right: 10px;
+        box-sizing: border-box;
+        outline: none;
+    }
+    button {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        font-size: 1.5rem;
+        border: none;
+        background-color: #f9f9f9;
+        color: #333;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+        button:hover {
+        background-color: #dcdcdc;
+        }
+        button:active {
+        background-color: #c0c0c0;
+        }
+        .calculate div {
+        display: flex;
+        justify-content: space-between;
+        }
+</style>
+<body>
+    <div class="calculate">
+        <input type="text" id="result" disabled>
+        <div>
+            <button onclick="Input('7')">7</button>
+            <button onclick="Input('8')">8</button>
+            <button onclick="Input('9')">9</button>
+            <button onclick="Input('+')">+</button>
+        </div>
+        <div>
+            <button onclick="Input('4')">4</button>
+            <button onclick="Input('5')">5</button>
+            <button onclick="Input('6')">6</button>
+            <button onclick="Input('-')">-</button>
+        </div>
+        <div>
+            <button onclick="Input('1')">1</button>
+            <button onclick="Input('2')">2</button>
+            <button onclick="Input('3')">3</button>
+            <button onclick="Input('')"></button>
+        </div>
+        <div>
+            <button onclick="Clear()">C</button>
+            <button onclick="Input('0')">0</button>
+            <button onclick="Calculate()">=</button>
+            <button onclick="Input('/')">/</button>
+        </div>
+    </div>
+    <script>
+        function Input(value) {
+            document.getElementById("result").value += value;
+        }
+        function Clear() {
+            document.getElementById("result").value = "";
+        }
+        function Calculate(value) {
+            let result = eval(document.getElementById("result").value);
+            document.getElementById("result").value = result;
+        }
+    
+    </script>
+</body>
+</html>
